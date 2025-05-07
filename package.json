@@ -1,0 +1,82 @@
+{
+  "name": "writing-assistant",
+  "title": "Writing assistant",
+  "description": "A powerful writing assistant that helps you proofread while preserving original wording, translate to multiple languages, and adjust the tone of your text using AI. Perfect for crafting professional communications while maintaining your unique voice.",
+  "icon": "assets/logo.png",
+  "author": "camille.pire",
+  "screenshots": [
+    "REPLACE_screenshot1.png",
+    "REPLACE_screenshot2.png",
+    "REPLACE_screenshot3.png"
+  ],
+  "categories": [
+    "Productivity",
+    "Communication"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "correct-text",
+      "title": "Proofread Text",
+      "description": "Fix grammar and spelling while preserving original wording where possible",
+      "mode": "view"
+    },
+    {
+      "name": "change-tone",
+      "title": "Adjust Writing Style",
+      "description": "Transform text between different tones, from casual to professional, while preserving meaning",
+      "mode": "view"
+    },
+    {
+      "name": "translate",
+      "title": "Translate Text",
+      "description": "Translate the selected text to any of 180+ supported languages",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "selectedModel",
+      "type": "dropdown",
+      "required": true,
+      "title": "AI Model",
+      "description": "Select which AI model to use",
+      "data": [
+        { "title": "OpenAI", "value": "openai" },
+        { "title": "Mistral AI", "value": "mistral" }
+      ]
+    },
+    {
+      "name": "apiKey",
+      "type": "password",
+      "required": true,
+      "title": "API Key",
+      "description": "API key for the selected AI model"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.93.2",
+    "@mistralai/mistralai": "^1.5.0",
+    "openai": "^4.86.2",
+    "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {
+    "@raycast/utils": "^1.19.1",
+    "@types/node": "^22.13.9",
+    "@types/node-fetch": "^2.6.11",
+    "@types/react": "^19.0.10",
+    "@typescript-eslint/eslint-plugin": "^8.26.0",
+    "@typescript-eslint/parser": "^8.26.0",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.2",
+    "prettier": "^3.5.3",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
