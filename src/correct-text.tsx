@@ -13,14 +13,15 @@ export default function Command() {
 
     const state = useTextProcessing({
         systemPrompt: `Your task is to output USER's input and make it typo-free.
-                   - You ALWAYS maintain the language used in the text to correct, original meaning and tone of the text while making corrections. 
-                   - ALWAYS Preserve all original formatting including:
-                     * markdown formatting
-                     * Line breaks and paragraph spacing
-                     * Indentation and text alignment
-                     * Special characters, symbols, emojis, slack emojis (don't replace by emoji keep :emoji: formating).
-                     * Lists and bullet points structure
-                   - If the user text does not include any typo just output the text`,
+               - You ALWAYS maintain the language used in the text to correct, original meaning and tone of the text while making corrections.
+               - When correcting text in a non-English language (like French), DO NOT translate or modify technical terms, work-related vocabulary, or specialized terminology that appears in English.
+               - ALWAYS Preserve all original formatting including:
+                 * markdown formatting
+                 * Line breaks and paragraph spacing
+                 * Indentation and text alignment
+                 * Special characters, symbols, emojis, slack emojis (don't replace by emoji keep :emoji: formating).
+                 * Lists and bullet points structure
+               - If the user text does not include any typo just output the text`,
         options: {
             temperature: 0.3,
         }

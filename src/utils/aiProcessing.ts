@@ -32,7 +32,7 @@ class OpenAIClient implements AIClient {
         { role: "system", content: systemPrompt },
         { role: "user", content: text },
       ],
-      model: "gpt-3.5-turbo",
+      model: "gpt-4o-mini",
       temperature,
     });
     return completion.choices[0]?.message?.content || "";
